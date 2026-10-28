@@ -14,14 +14,13 @@
     <nav class="nav">
       <a class="nav-home" href="/">Rachel</a>
       <div class="nav-links">
-        <a href="/" aria-current="page">Games</a>
-        <a href="https://github.com/YunGyeongee">GitHub</a>
+        <a href="/" aria-current="page">Playground</a>
       </div>
     </nav>
   </header>
 
   <main class="wrap">
-    <a class="back" href="/">← Games</a>
+    <a class="back" href="/">← Playground</a>
 
     <div class="game-head">
       <img src="/assets/games/pocket-roo-icon.png" alt="">
@@ -39,8 +38,34 @@
 
       <div class="buttons">
         <a class="button" href="https://github.com/YunGyeongee/pocket-roo/releases/latest">내려받기 (Mac · Windows)</a>
-        <a class="button sub" href="https://github.com/YunGyeongee/pocket-roo#readme">설치 방법</a>
+        <button class="button sub" type="button" aria-expanded="false" aria-controls="install">설치 방법</button>
       </div>
+
+      <section class="install" id="install" hidden>
+        <h3>macOS</h3>
+        <p>Apple Silicon(M1 이상) Mac에서 실행됩니다. 내려받기 페이지에서 <code>mac-arm64.dmg</code> 파일을 받습니다.</p>
+        <ol>
+          <li><code>.dmg</code>를 열고 Pocket Roo를 응용 프로그램 폴더로 끌어다 놓습니다.</li>
+          <li>앱을 실행합니다. 아직 Apple 공증을 받지 않은 앱이라 처음에는 "확인되지 않은 개발자" 경고가 뜨고 열리지 않습니다.</li>
+          <li><b>시스템 설정 → 개인정보 보호 및 보안</b>으로 가서 아래쪽의 <b>그래도 열기</b>를 누릅니다. 한 번만 하면 됩니다.</li>
+          <li>화면 오른쪽 아래에 게임 창이 뜹니다. 모드를 고르고 Enter를 누르면 시작합니다.</li>
+        </ol>
+        <p>3번이 안 되면 터미널에서 아래 명령을 한 번 실행해도 됩니다.</p>
+        <pre><code>xattr -dr com.apple.quarantine "/Applications/Pocket Roo.app"</code></pre>
+
+        <h3>Windows</h3>
+        <p>Windows 10 이상에서 실행됩니다. 내려받기 페이지에서 <code>windows-setup.exe</code> 파일을 받습니다. 설치 파일 하나로 일반 PC(x64)와 ARM PC를 모두 지원합니다.</p>
+        <ol>
+          <li>받은 설치 파일을 실행합니다.</li>
+          <li>아직 코드 서명을 하지 않은 앱이라 "Windows의 PC 보호" 창이 뜹니다. <b>추가 정보</b>를 누른 뒤 <b>실행</b>을 누릅니다.</li>
+          <li>관리자 권한 없이 내 계정에만 설치되고, 끝나면 바로 게임이 실행됩니다. 바탕화면과 시작 메뉴에 바로가기가 생깁니다.</li>
+          <li>지울 때는 <b>설정 → 앱 → 설치된 앱</b>에서 Pocket Roo를 제거합니다.</li>
+        </ol>
+        <p>설치하기 싫으면 <code>.zip</code>을 받아도 됩니다. 일반 PC는 <code>windows-x64.zip</code>, ARM PC는 <code>windows-arm64.zip</code>입니다. 압축을 풀고 <code>Pocket Roo.exe</code>를 실행하면 됩니다.</p>
+
+        <h3>업데이트</h3>
+        <p>앱이 스스로 업데이트하지는 않습니다. 새 버전이 나오면 다시 받아 같은 방법으로 설치하면 됩니다. 저장하는 데이터가 없어서 덮어써도 잃는 것은 없습니다.</p>
+      </section>
 
       <h2>조작</h2>
       <table>
@@ -57,5 +82,6 @@
   </main>
 
   <footer class="site-footer wrap">© 2026 Rachel</footer>
+  <script src="/assets/install.js"></script>
 </body>
 </html>
